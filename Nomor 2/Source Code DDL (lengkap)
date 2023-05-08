@@ -1,0 +1,99 @@
+CREATE TABLE `produk` (
+  `id` int PRIMARY KEY,
+  `nama` varchar(255),
+  `harga` int,
+  `deskripsi` text,
+  `kategori_id` int,
+  `merek_id` int,
+  `kondisi` varchar(255),
+  `berat` int,
+  `stok` int
+);
+
+CREATE TABLE `kategori` (
+  `id` int PRIMARY KEY,
+  `nama` varchar(255),
+  `deskripsi` text
+);
+
+CREATE TABLE `merek` (
+  `id` int PRIMARY KEY,
+  `nama` varchar(255)
+);
+
+CREATE TABLE `transaksi` (
+  `id` int PRIMARY KEY,
+  `pengguna_id` int,
+  `tanggal_transaksi` date,
+  `total_harga` int,
+  `metode_pembayaran` varchar(255),
+  `status` varchar(255)
+);
+
+CREATE TABLE `produk_transaksi` (
+  `transaksi_id` int,
+  `produk_id` int,
+  `kuantitas` int
+);
+
+CREATE TABLE `pengguna` (
+  `id` int PRIMARY KEY,
+  `nama` varchar(255),
+  `email` varchar(255),
+  `alamat` varchar(255),
+  `no_telp` varchar(255)
+);
+
+CREATE TABLE `alamat` (
+  `id` int,
+  `nama` varchar(255),
+  `alamat` varchar(255),
+  `kecamatan` varchar(255),
+  `kota` varchar(255),
+  `kode_post` varchar(255)
+);
+
+CREATE TABLE `pengiriman` (
+  `id` int PRIMARY KEY,
+  `transaksi_id` int,
+  `alamat_pengiriman` varchar(255),
+  `tanggal_pengiriman` date,
+  `tanggal_penerimaan` date
+);
+
+CREATE TABLE `ulasan_produk` (
+  `id` int PRIMARY KEY,
+  `produk_id` int,
+  `pengguna_id` int,
+  `tanggal_ulasan` date,
+  `rating` int,
+  `komentar` text
+);
+
+CREATE TABLE `wishlist` (
+  `id` int PRIMARY KEY,
+  `pengguna_id` int,
+  `produk_id` int
+);
+
+ALTER TABLE `produk` ADD FOREIGN KEY (`kategori_id`) REFERENCES `kategori` (`id`);
+
+ALTER TABLE `produk` ADD FOREIGN KEY (`merek_id`) REFERENCES `merek` (`id`);
+
+ALTER TABLE `transaksi` ADD FOREIGN KEY (`pengguna_id`) REFERENCES `pengguna` (`id`);
+
+ALTER TABLE `produk_transaksi` ADD FOREIGN KEY (`transaksi_id`) REFERENCES `transaksi` (`id`);
+
+ALTER TABLE `produk_transaksi` ADD FOREIGN KEY (`produk_id`) REFERENCES `produk` (`id`);
+
+ALTER TABLE `alamat` ADD FOREIGN KEY (`id`) REFERENCES `pengguna` (`alamat`);
+
+ALTER TABLE `pengiriman` ADD FOREIGN KEY (`transaksi_id`) REFERENCES `transaksi` (`id`);
+
+ALTER TABLE `ulasan_produk` ADD FOREIGN KEY (`produk_id`) REFERENCES `produk` (`id`);
+
+ALTER TABLE `ulasan_produk` ADD FOREIGN KEY (`pengguna_id`) REFERENCES `pengguna` (`id`);
+
+ALTER TABLE `wishlist` ADD FOREIGN KEY (`pengguna_id`) REFERENCES `pengguna` (`id`);
+
+ALTER TABLE `wishlist` ADD FOREIGN KEY (`produk_id`) REFERENCES `produk` (`id`);
