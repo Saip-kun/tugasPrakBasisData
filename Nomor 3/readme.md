@@ -1,4 +1,3 @@
-
 ## Create/insert
 ```penggunas```
 
@@ -25,8 +24,8 @@ VALUES
 (19,'Afif Shadiq', 'afifshadiq@gmail.com','0889545632154',NULL,'afifshadiq123',NULL,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP),
 (20,'Andika Maula', 'andikamaula@gmail.com','085364978821',NULL,'andikamaula123',NULL,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP);</pre></code>
 
-#UPDATE
-</pre></code>UPDATE penggunas
+## UPDATE
+<pre><code>UPDATE penggunas
 SET nama = 'Ahmad Zaki'
 WHERE id = 6;
 
@@ -40,21 +39,26 @@ WHERE id = 6;
 
 UPDATE penggunas
 SET nama = 'ahmadshiddiq@gmail.com'
-WHERE id = 7;</pre></code>
+WHERE id = 7;
+</pre></code>
 
 
-# READ
+## READ
 Show Entire Table Column
-<pre><code>SELECT * FROM penggunas;<pre><code>
+<pre><code>SELECT * FROM penggunas;
+</pre></code>
 
 Show any Column From Table
 <pre><code>SELECT id, nama, email
-FROM penggunas;<pre><code>
+FROM penggunas;
+</pre></code>
 
 Show ROW by Condition From Table
 <pre><code>SELECT * FROM penggunas
-WHERE id > 4;<pre><code>
+WHERE id > 4;
+</pre></code>
 
-# DELETE
-DELETE FROM penggunas
+## DELETE
+<pre><code>DELETE FROM penggunas
 WHERE id = 20;
+</pre></code>
