@@ -24,6 +24,18 @@ VALUES
 (19,'Afif Shadiq', 'afifshadiq@gmail.com','0889545632154',NULL,'afifshadiq123',NULL,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP),
 (20,'Andika Maula', 'andikamaula@gmail.com','085364978821',NULL,'andikamaula123',NULL,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP);</pre></code>
 
+```produks```
+<pre><code>INSERT INTO produks 
+(id, nama, harga,alamat,deskripsi,id_kategori,id_merk,kondisi,berat,stok,created_at,updated_at)
+VALUES
+(1,'mie sedap kari spesial',3000,'','',111,20111,'new',300,50,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP),
+(2,'mie sedap soto medan',3000,'','',112,20112,'new',300,45,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP),
+(3,'mie sedap korean spicy',3000,'','',113,20113,'new',300,50,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP),
+(4,'teh botol',6000,'','',211,21211,'new',600,120,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP),
+(5,'fruitea',5000,'','',212,21212,'new',600,120,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP),
+(6,'teh poci',3000,'','',213,21213,'new',600,120,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP)
+</pre></code>
+
 ## UPDATE
 <pre><code>UPDATE penggunas
 SET nama = 'Ahmad Zaki'
