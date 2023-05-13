@@ -7,7 +7,7 @@ GROUP BY id_kategori;
 </pre></code>
 
 # MAX
-```menghitung harga tertinggi(termahal) produk berdasarkan id_kategori```
+```Menghitung harga tertinggi(termahal) produk berdasarkan id_kategori```
 
 <pre><code>SELECT MAX(harga) as 'Harga Termahal', id_kategori
 FROM produks
